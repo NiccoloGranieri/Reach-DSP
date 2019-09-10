@@ -1,0 +1,131 @@
+#N canvas -1484 -76 1440 507 10;
+#X obj 114 129 cnv 5 5 5 empty empty GESTURE_ONE 0 0 0 12 -262144 -66577
+0;
+#X obj 115 185 cnv 5 5 5 empty empty GESTURE_THREE 0 0 0 12 -262144
+-66577 0;
+#X obj 114 158 cnv 5 5 5 empty empty GESTURE_TWO 0 0 0 12 -262144 -66577
+0;
+#X obj 232 120 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -262144
+-1 -1 1;
+#X obj 232 149 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -262144
+-1 -1 1;
+#X obj 232 176 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -262144
+-1 -1 1;
+#X obj 378 169 vradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
+-1 -1 2;
+#X text 356 168 Low;
+#X text 356 184 Med;
+#X text 350 198 High;
+#X obj 177 210 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 380 237 vradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X text 322 237 Clean Off;
+#X text 328 252 Clean On;
+#X obj 38 121 s gOne;
+#X obj 38 145 s gTwo;
+#X obj 38 169 s gThree;
+#X text 122 209 3D Space;
+#X obj 15 218 s spaceThresh;
+#X obj 425 173 s fxIntensity;
+#X obj 427 246 s cleanFeed;
+#X obj 378 134 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 332 134 Connect;
+#X obj 555 216 fx.gOneParser;
+#X obj 676 216 fx.gTwoParser;
+#X obj 802 216 fx.gThreeParser;
+#X obj 555 172 r gOne;
+#X obj 676 172 r gTwo;
+#X obj 802 172 r gThree;
+#X obj 1189 143 adc~ 1 2;
+#X obj 668 461 dac~ 1 2;
+#X obj 629 144 u.Receive&Parse;
+#X obj 1189 167 s~ clean;
+#X obj 1199 187 s~ preFx;
+#X obj 1053 169 bonk~;
+#X obj 1105 174 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1053 118 r ldbng;
+#X msg 1053 142 thresh 2.5 9;
+#X obj 1085 194 s bonk;
+#X obj 378 111 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 326 111 Settings;
+#X msg 441 107 \; pd audio-properties;
+#X obj 36 22 r ldbng;
+#X msg 36 43 1;
+#X text 234 102 0;
+#X text 249 102 1;
+#X text 264 102 2;
+#X text 279 102 3;
+#X text 294 102 U;
+#X obj 177 242 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 113 241 Clean Bal.;
+#X obj 15 248 s cleanBal;
+#X obj 555 255 +~;
+#X obj 555 276 +~;
+#X obj 651 255 r cleanBal;
+#X obj 767 319 r~ clean;
+#X obj 616 314 - 1;
+#X obj 616 335 * -1;
+#X obj 616 356 abs;
+#X obj 555 397 *~;
+#X obj 767 397 *~;
+#X obj 668 427 +~;
+#X obj 720 255 r cleanFeed;
+#X obj 651 279 spigot;
+#X msg 748 300 1;
+#X msg 720 300 0;
+#X obj 720 276 sel 0 1;
+#X obj 773 276 s bangUI;
+#X obj 15 268 r bangUI;
+#X connect 3 0 14 0;
+#X connect 4 0 15 0;
+#X connect 5 0 16 0;
+#X connect 6 0 19 0;
+#X connect 10 0 18 0;
+#X connect 11 0 20 0;
+#X connect 21 0 31 0;
+#X connect 23 0 52 0;
+#X connect 24 0 52 1;
+#X connect 25 0 53 1;
+#X connect 26 0 23 0;
+#X connect 27 0 24 0;
+#X connect 28 0 25 0;
+#X connect 29 0 32 0;
+#X connect 29 0 33 0;
+#X connect 29 0 34 0;
+#X connect 34 1 35 0;
+#X connect 34 1 38 0;
+#X connect 36 0 37 0;
+#X connect 37 0 34 0;
+#X connect 39 0 41 0;
+#X connect 42 0 43 0;
+#X connect 43 0 3 0;
+#X connect 43 0 4 0;
+#X connect 43 0 5 0;
+#X connect 49 0 51 0;
+#X connect 52 0 53 0;
+#X connect 53 0 59 0;
+#X connect 54 0 63 0;
+#X connect 55 0 60 0;
+#X connect 56 0 57 0;
+#X connect 57 0 58 0;
+#X connect 58 0 59 1;
+#X connect 59 0 61 0;
+#X connect 60 0 61 1;
+#X connect 61 0 30 0;
+#X connect 61 0 30 1;
+#X connect 62 0 63 1;
+#X connect 62 0 66 0;
+#X connect 63 0 56 0;
+#X connect 63 0 60 1;
+#X connect 64 0 59 1;
+#X connect 65 0 60 1;
+#X connect 66 0 64 0;
+#X connect 66 0 65 0;
+#X connect 66 1 67 0;
+#X connect 68 0 49 0;
+#X coords 0 -1 1 1 320 180 2 100 100;
