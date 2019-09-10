@@ -16,8 +16,8 @@
 #X text 356 168 Low;
 #X text 356 184 Med;
 #X text 350 198 High;
-#X obj 177 210 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+#X obj 177 230 hsl 128 15 0 0.1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 7000 1;
 #X obj 380 237 vradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
 #X text 322 237 Clean Off;
@@ -25,8 +25,8 @@
 #X obj 38 121 s gOne;
 #X obj 38 145 s gTwo;
 #X obj 38 169 s gThree;
-#X text 122 209 3D Space;
-#X obj 15 218 s spaceThresh;
+#X text 122 229 3D Space;
+#X obj 15 238 s spaceThresh;
 #X obj 425 173 s fxIntensity;
 #X obj 427 246 s cleanFeed;
 #X obj 378 134 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -60,10 +60,10 @@
 #X text 264 102 2;
 #X text 279 102 3;
 #X text 294 102 U;
-#X obj 177 242 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X text 113 241 Clean Bal.;
-#X obj 15 248 s cleanBal;
+#X obj 177 252 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6350 1;
+#X text 113 251 Clean Bal.;
+#X obj 15 258 s cleanBal;
 #X obj 555 255 +~;
 #X obj 555 276 +~;
 #X obj 651 255 r cleanBal;
@@ -80,9 +80,33 @@
 #X msg 720 300 0;
 #X obj 720 276 sel 0 1;
 #X obj 773 276 s bangUI;
-#X obj 15 268 r bangUI;
-#X obj 90 23 r ldbng;
+#X obj 15 279 r bangUI;
 #X msg 90 43 0;
+#X obj 174 208 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 113 208 Calibrate;
+#X floatatom 275 208 5 0 0 0 - - -;
+#X text 213 207 Countdown;
+#X obj 1191 331 delay 1000;
+#X obj 1203 351 delay 1000;
+#X obj 1213 371 delay 1000;
+#X obj 1225 391 delay 1000;
+#X obj 1235 411 delay 1000;
+#X obj 1191 282 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 1159 331 5;
+#X msg 1159 351 4;
+#X msg 1159 371 3;
+#X msg 1159 391 2;
+#X msg 1159 411 1;
+#X msg 1159 431 0;
+#X obj 1082 455 s countDown;
+#X obj 14 217 s calibrate;
+#X obj 15 196 r countDown;
+#X obj 1191 262 r calibrate;
+#X obj 1159 478 s resting;
+#X msg 135 42 0.05;
+#X msg 179 41 0.5;
 #X connect 3 0 14 0;
 #X connect 4 0 15 0;
 #X connect 5 0 16 0;
@@ -105,6 +129,9 @@
 #X connect 37 0 34 0;
 #X connect 39 0 41 0;
 #X connect 42 0 43 0;
+#X connect 42 0 69 0;
+#X connect 42 0 91 0;
+#X connect 42 0 92 0;
 #X connect 43 0 3 0;
 #X connect 43 0 4 0;
 #X connect 43 0 5 0;
@@ -130,9 +157,31 @@
 #X connect 66 0 65 0;
 #X connect 66 1 67 0;
 #X connect 68 0 49 0;
-#X connect 69 0 70 0;
-#X connect 70 0 6 0;
-#X connect 70 0 11 0;
-#X connect 70 0 10 0;
-#X connect 70 0 49 0;
+#X connect 69 0 6 0;
+#X connect 69 0 11 0;
+#X connect 69 0 10 0;
+#X connect 69 0 49 0;
+#X connect 70 0 87 0;
+#X connect 74 0 81 0;
+#X connect 74 0 75 0;
+#X connect 75 0 82 0;
+#X connect 75 0 76 0;
+#X connect 76 0 83 0;
+#X connect 76 0 77 0;
+#X connect 77 0 84 0;
+#X connect 77 0 78 0;
+#X connect 78 0 85 0;
+#X connect 78 0 90 0;
+#X connect 79 0 74 0;
+#X connect 79 0 80 0;
+#X connect 80 0 86 0;
+#X connect 81 0 86 0;
+#X connect 82 0 86 0;
+#X connect 83 0 86 0;
+#X connect 84 0 86 0;
+#X connect 85 0 86 0;
+#X connect 88 0 72 0;
+#X connect 89 0 79 0;
+#X connect 91 0 10 0;
+#X connect 92 0 49 0;
 #X coords 0 -1 1 1 320 180 2 100 100;
