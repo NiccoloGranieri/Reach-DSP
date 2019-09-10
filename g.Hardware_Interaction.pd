@@ -1,4 +1,4 @@
-#N canvas -1484 -76 1440 507 10;
+#N canvas -1920 282 1440 507 10;
 #X obj 114 129 cnv 5 5 5 empty empty GESTURE_ONE 0 0 0 12 -262144 -66577
 0;
 #X obj 115 185 cnv 5 5 5 empty empty GESTURE_THREE 0 0 0 12 -262144
@@ -12,7 +12,7 @@
 #X obj 232 176 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -262144
 -1 -1 1;
 #X obj 378 169 vradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
+-1 -1 0;
 #X text 356 168 Low;
 #X text 356 184 Med;
 #X text 350 198 High;
@@ -81,6 +81,8 @@
 #X obj 720 276 sel 0 1;
 #X obj 773 276 s bangUI;
 #X obj 15 268 r bangUI;
+#X obj 90 23 r ldbng;
+#X msg 90 43 0;
 #X connect 3 0 14 0;
 #X connect 4 0 15 0;
 #X connect 5 0 16 0;
@@ -128,4 +130,9 @@
 #X connect 66 0 65 0;
 #X connect 66 1 67 0;
 #X connect 68 0 49 0;
+#X connect 69 0 70 0;
+#X connect 70 0 6 0;
+#X connect 70 0 11 0;
+#X connect 70 0 10 0;
+#X connect 70 0 49 0;
 #X coords 0 -1 1 1 320 180 2 100 100;
