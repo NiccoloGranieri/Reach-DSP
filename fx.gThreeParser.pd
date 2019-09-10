@@ -1,4 +1,4 @@
-#N canvas 720 23 720 855 10;
+#N canvas 0 23 1440 855 10;
 #X obj 44 6 inlet;
 #X text 627 444 FX 3;
 #X text 431 444 FX 2;
@@ -36,6 +36,7 @@
 #X obj 87 476 u.invert;
 #X obj 170 477 u.invert;
 #X obj 44 51 u.audioGate5 ___________________;
+#X obj 88 591 - 0.1;
 #X connect 0 0 36 0;
 #X connect 7 0 16 0;
 #X connect 8 0 7 0;
@@ -62,7 +63,7 @@
 #X connect 23 0 26 0;
 #X connect 24 0 28 0;
 #X connect 25 0 27 0;
-#X connect 26 0 29 1;
+#X connect 26 0 37 0;
 #X connect 27 0 28 0;
 #X connect 27 1 23 1;
 #X connect 28 0 23 0;
@@ -79,3 +80,4 @@
 #X connect 36 2 10 1;
 #X connect 36 3 12 1;
 #X connect 36 4 14 1;
+#X connect 37 0 29 1;
