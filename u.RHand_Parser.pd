@@ -29,10 +29,10 @@
 #X obj 463 445 route TYPE_PINKY;
 #X obj 464 4 r R;
 #X obj 464 56 route knuckle joint1 joint2 joint3;
-#X obj 464 334 route x y z;
-#X obj 514 247 route x y z;
-#X obj 564 162 route x y z;
-#X obj 614 75 route x y z;
+#X obj 464 334 unpack 0 0 0;
+#X obj 514 247 unpack 0 0 0;
+#X obj 564 162 unpack 0 0 0;
+#X obj 614 75 unpack 0 0 0;
 #X obj 714 4 r R;
 #X obj 714 56 route knuckle joint1 joint2 joint3;
 #X obj 464 29 route TYPE_INDEX;
