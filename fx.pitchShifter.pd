@@ -1,7 +1,7 @@
-#N canvas 0 23 1440 855 10;
+#N canvas 284 165 1440 855 10;
 #X obj 7 6 inlet~;
 #X obj 28 175 noise~;
-#X obj 28 196 *~ 1e-14;
+#X obj 28 196 *~ 1e-014;
 #X text 89 170 dithering-noise against denormal floatingpoint numbers
 (SSE2-Register);
 #X obj 7 219 delwrite~ \$0_psh_del 4000;
@@ -131,7 +131,7 @@
 #X obj 522 548 +~ 2;
 #X obj 728 99 clip 0.001 2;
 #X msg 735 290 -1000 440, f 10;
-#X obj 716 420 pack 1.3e-05 20;
+#X obj 716 420 pack 1.3e-005 20;
 #X obj 803 614 vd~ \$0_psh_del;
 #X obj 688 597 vd~ \$0_psh_del;
 #X floatatom 728 54 5 0 0 0 - - -;
@@ -172,9 +172,9 @@
 #X obj 497 125 * 100;
 #X obj 261 49 r fxIntensity;
 #X obj 261 70 sel 0 1 2;
-#X msg 262 91 100;
-#X msg 290 91 250;
-#X msg 320 91 500;
+#X msg 262 91 250;
+#X msg 290 91 500;
+#X msg 320 91 750;
 #X connect 0 0 4 0;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
